@@ -32,7 +32,7 @@ componentWillMount() {
 
   render() {
     return (
-    <View style={styles.container}>
+    // <View style={styles.container}>
       <MapView
         showsUserLocation
         followsUserLocation
@@ -44,18 +44,11 @@ componentWillMount() {
           longitudeDelta: 0.0121
         }}
       />
-      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    ...StyleSheet.absoluteFillObject,
-    flex: 1,
-    justifyContent: "flex-end",
-    alignItems: "center"
-  },
   map: {
     ...StyleSheet.absoluteFillObject
   }

@@ -51,13 +51,21 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 import MapScreen from './MapScreen';
+import PlaceInput from './components/PlaceInput';
 
 export default class App extends Component {
   render() {
     return (
-      <MapScreen />
-    )
+      <View style={styles.container}>
+        <MapScreen />
+        <PlaceInput />
+      </View>
+    );
   }
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
