@@ -16,22 +16,24 @@ export default class PlaceInput extends Component {
     }
 
     async getPlaces(input) {
+        const { userLatitude, userLongitude } = this.props;
         const result = await axios.get(
-            `https://maps.googleapis.com/maps/api/place/autocomplete/json?key=AIzaSyA0GCw9Vtqr7arl8J1S-UhlK-tvs0pWjsc&input=${input}&location=39.850064, -86.053082&radius=2000`
+            `https://maps.googleapis.com/maps/api/place/autocomplete/json?key=AIzaSyA0GCw9Vtqr7arl8J1S-UhlK-tvs0pWjsc&input=${input}&location=${userLatitude},${userLongitude}&radius=2000`
         );
         this.setState({ predictions: result.data.predictions });
         console.log(result.data);
     }
-    setDestination(main_text) {
-        this.setState({destinationInput: main_text });
+    setDestination(main_text, place_id) {
+        this.setState({destinationInput: main_text, predictions: [] });
+        this.props.showDirectionsOnMap(place_id);
     }
 
   render() {
       const { suggestionStyle, main_textStyle, secondary_textStyle, placeInputStyle } = styles;
       const predictions = this.state.predictions.map(prediction => {
-        const {id, structured_formatting } = prediction;
+        const {id, structured_formatting, place_id } = prediction;
       return (
-          <TouchableOpacity key={id} onPress={() => this.setDestination(structured_formatting.main_text)}>
+          <TouchableOpacity key={id} onPress={() => this.setDestination(structured_formatting.main_text, place_id)}>
             <View style={suggestionStyle}>
                 <Text style= {main_textStyle}>{structured_formatting.main_text}</Text>
                 <Text style={secondary_textStyle}>{structured_formatting.secondary_text}</Text>
