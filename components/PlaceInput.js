@@ -63,7 +63,7 @@ export default class PlaceInput extends Component {
 const styles = StyleSheet.create({
     placeInputStyle: {
         height: 40,
-        marginTop: 50,
+        marginTop: 35,
         padding: 5, 
         backgroundColor: "white"
     },

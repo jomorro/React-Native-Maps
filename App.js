@@ -54,13 +54,15 @@ import {
   StyleSheet,
   View,
   PermissionsAndroid,
-  Platform
+  Platform,
+  TouchableWithoutFeedback,
+  Keyboard
 } from "react-native";
 import MapScreen from "./MapScreen";
 import PlaceInput from "./components/PlaceInput";
 import axios from "axios";
 import PolyLine from "@mapbox/polyline";
-import { Polyline } from "react-native-maps";
+import MapView, { Polyline, Marker } from "react-native-maps";
 
 export default class App extends Component {
   constructor(props) {
@@ -73,10 +75,15 @@ export default class App extends Component {
     };
     this.locationWatchId = null;
     this.showDirectionsOnMap = this.showDirectionsOnMap.bind(this);
+    this.map = React.createRef();
   }
 
   componentDidMount() {
     this.requestFineLocation();
+  }
+  
+  hideKeyboard() {
+    Keyboard.dismiss();
   }
 
   componentWillMount() {
@@ -98,6 +105,10 @@ export default class App extends Component {
         longitude: point[1]
       }));
       this.setState({ desinationCoords: latLng });
+      if (Platform.OS === 'ios') {
+      this.map.current.fitToCoordinates(latLng, { edgePadding: { top: 40, bottom: 40, left: 40, right: 40 }
+      });
+    }
       console.log(points);
     } catch (err) {
       console.error(err);
@@ -140,25 +151,47 @@ export default class App extends Component {
   }
 
   render() {
-    let polyline =
-      this.state.desinationCoords.length > 0 ? (
-        <Polyline coordinates={this.state.desinationCoords} />
-      ) : null;
+    const { desinationCoords, userLatitude, userLongitude, hasMapPermission } = this.state;
+    let polyline = null;
+    let marker = null;
+    if(desinationCoords.length > 0) {
+        polyline = ( 
+        <Polyline
+          coordinates={desinationCoords}
+          strokeWidth={4}
+          strokeColor="#33acff"
+        />
+      );
+        marker = (
+           <Marker coordinate={desinationCoords[desinationCoords.length - 1 ]} />
+        );
+    } 
     if (this.state.hasMapPermission) {
       return (
+      <TouchableWithoutFeedback onPress={this.hideKeyboard}>
         <View style={styles.container}>
-          <MapScreen
-            userLatitude={this.state.userLatitude}
-            userLongitude={this.state.userLongitude}
+          <MapView
+            ref={this.map}
+            showsUserLocation
+            followsUserLocation
+            style={styles.map}
+            region={{
+              latitude: userLatitude,
+              longitude: userLongitude,
+              latitudeDelta: 0.015,
+              longitudeDelta: 0.0121
+            }}
           >
             {polyline}
-          </MapScreen>
+            {marker}
+          </MapView>
           <PlaceInput
             showDirectionsOnMap={this.showDirectionsOnMap}
-            userLatitude={this.state.userLatitude}
-            userLongitude={this.state.userLongitude}
+            userLatitude={userLatitude}
+            userLongitude={userLongitude}
           />
         </View>
+      </TouchableWithoutFeedback>
       );
     }
     return null;
@@ -168,5 +201,8 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject
   }
 });

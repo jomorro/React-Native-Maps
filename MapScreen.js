@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { View, StyleSheet } from "react-native";
-import MapView from "react-native-maps"; 
+import MapView from "react-native-maps";
 
-export default class MapScreen extends Component {
+export class MapScreen extends Component {
   render() {
     return (
-    // <View style={styles.container}>
+      // <View style={styles.container}>
       <MapView
         showsUserLocation
         followsUserLocation
@@ -23,9 +23,12 @@ export default class MapScreen extends Component {
   }
 }
 
+export default React.forwardRef((props, ref) => (
+  <MapScreen innerRef={ref} {...props} />
+));
+
 const styles = StyleSheet.create({
   map: {
     ...StyleSheet.absoluteFillObject
   }
 });
-
