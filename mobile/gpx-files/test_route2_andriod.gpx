@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" creator="mapstogpx.com" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
+  <metadata>
+    <link href="http://www.mapstogpx.com">
+      <text>Sverrir Sigmundarson</text>
+    </link>
+    <!--desc>Map data ©2019</desc-->
+    <!--copyright author="Google Inc">
+    	<year>2019</year>
+    	<license>https://developers.google.com/maps/terms</license>
+    </copyright-->
+    <!--url>https://www.google.com/maps/dir/39.8521+-86.0531/5320+North+Kenyon+Drive,+Indianapolis,+IN/@39.8511304,-86.0551886,17z/data=!3m1!4b1!4m12!4m11!1m3!2m2!1d-86.0531!2d39.8521!1m5!1m1!1s0x886b4dcb2a9e7f77:0x69984466e4a4ab99!2m2!1d-86.0530998!2d39.8500716!3e0?shorturl=1&hl=en</url-->
+    <time>2019-06-05T13:09:21Z</time>
+  </metadata>
+<trk>
+  <name>39.8521 -86.0531 to 5320 North Kenyon Drive</name>
+  <number>1</number>
+  <trkseg>
+  <trkpt lat="39.8521892" lon="-86.0529637">
+    <name>TP001</name>
+    <time>2019-06-05T13:09:21Z</time>
+  </trkpt>
+  <trkpt lat="39.8521892" lon="-86.0529637">
+    <name>TP002</name>
+    <time>2019-06-05T13:09:22Z</time>
+  </trkpt>
+  <trkpt lat="39.8521892" lon="-86.0529637">
+    <name>TP003</name>
+    <time>2019-06-05T13:09:23Z</time>
+  </trkpt>
+  <trkpt lat="39.85218" lon="-86.05296">
+    <name>TP004</name>
+    <time>2019-06-05T13:09:24Z</time>
+  </trkpt>
+  <trkpt lat="39.85214" lon="-86.05291">
+    <name>TP005</name>
+    <time>2019-06-05T13:09:25Z</time>
+  </trkpt>
+  <trkpt lat="39.85212" lon="-86.05289">
+    <name>TP006</name>
+    <time>2019-06-05T13:09:26Z</time>
+  </trkpt>
+  <trkpt lat="39.85209" lon="-86.05287">
+    <name>TP007</name>
+    <time>2019-06-05T13:09:27Z</time>
+  </trkpt>
+  <trkpt lat="39.85206" lon="-86.05285">
+    <name>TP008</name>
+    <time>2019-06-05T13:09:28Z</time>
+  </trkpt>
+  <trkpt lat="39.85204" lon="-86.05284">
+    <name>TP009</name>
+    <time>2019-06-05T13:09:29Z</time>
+  </trkpt>
+  <trkpt lat="39.85201" lon="-86.05282">
+    <name>TP010</name>
+    <time>2019-06-05T13:09:30Z</time>
+  </trkpt>
+  <trkpt lat="39.85193" lon="-86.05279">
+    <name>TP011</name>
+    <time>2019-06-05T13:09:32Z</time>
+  </trkpt>
+  <trkpt lat="39.8519" lon="-86.05278">
+    <name>TP012</name>
+    <time>2019-06-05T13:09:33Z</time>
+  </trkpt>
+  <trkpt lat="39.85187" lon="-86.05277">
+    <name>TP013</name>
+    <time>2019-06-05T13:09:34Z</time>
+  </trkpt>
+  <trkpt lat="39.85181" lon="-86.05276">
+    <name>TP014</name>
+    <time>2019-06-05T13:09:35Z</time>
+  </trkpt>
+  <trkpt lat="39.85178" lon="-86.05276">
+    <name>TP015</name>
+    <time>2019-06-05T13:09:36Z</time>
+  </trkpt>
+  <trkpt lat="39.85175" lon="-86.05276">
+    <name>TP016</name>
+    <time>2019-06-05T13:09:37Z</time>
+  </trkpt>
+  <trkpt lat="39.85172" lon="-86.05276">
+    <name>TP017</name>
+    <time>2019-06-05T13:09:38Z</time>
+  </trkpt>
+  <trkpt lat="39.85133" lon="-86.05275">
+    <name>TP018</name>
+    <time>2019-06-05T13:09:44Z</time>
+  </trkpt>
+  <trkpt lat="39.85008" lon="-86.05273">
+    <name>TP019</name>
+    <time>2019-06-05T13:10:04Z</time>
+  </trkpt>
+  <trkpt lat="39.8500757" lon="-86.05273">
+    <name>TP020</name>
+    <time>2019-06-05T13:10:05Z</time>
+  </trkpt>
+  </trkseg>
+</trk>
+</gpx>
